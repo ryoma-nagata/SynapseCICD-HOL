@@ -1,4 +1,4 @@
-# AzureDevOpsによるテンプレートデプロイハンズオン
+# AzureDevOpsによるSynapse CICD ハンズオン
 
 ## 概要
 
