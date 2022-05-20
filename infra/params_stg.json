@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "japaneast"
+    },
+    "project": {
+      "value": ""
+    },
+    "env": {
+      "value": "stg"
+    },
+    "deployment_id": {
+      "value": "01"
+    },
+    "storageIPWhiteLists": {
+      "value": [
+        {
+        "value": "*.*.*.*",
+        "action": "Allow"
+        }
+      ]
+    },
+    "sqlIPWhiteLists": {
+      "value": [
+        {
+          "name": "allowALL",
+          "startIpAddress": "0.0.0.0",
+          "endIpAddress": "255.255.255.255"
+        }
+      ]
+    },
+    "AdminGroupName": {
+      "value": ""
+    },
+    "AdminGroupObjectID": {
+      "value": ""
+    },
+    "sqlPoolBackupType": {
+      "value": "LRS"
+    },
+    "sqlPooldwu": {
+      "value": "DW100c"
+    }
+  }
+}
