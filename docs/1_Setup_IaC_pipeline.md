@@ -158,3 +158,10 @@
 7. 対象のリソースグループの**デプロイ**画面から実行を確認可能です。
 
 ![](.image/2022-02-15-14-16-28.png)
+
+
+## 4. Synapse RBACロールの付与
+
+### 4-1. Synapse RBACロールの付与
+
+[Synapse Studio で Synapse RBAC ロールの割り当てを管理する方法](https://docs.microsoft.com/ja-jp/azure/synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments#open-synapse-studio) を参考に、dev,stg環境それぞれで1-3で作成したセキュリティグループへのSynapse管理者権限の付与を実行します。
