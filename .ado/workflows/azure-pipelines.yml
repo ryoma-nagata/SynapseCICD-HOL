@@ -1,4 +1,4 @@
-name: ci-main-cd-stg
+name: iac-deployment-$(rev:r)
 
 trigger:
   # none
