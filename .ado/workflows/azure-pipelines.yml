@@ -152,7 +152,7 @@ stages:
             displayName: 'Publish ARMtemplate'
             artifact: 'infra'
 
-  - stage: CD
+  - stage: DEV
     displayName: "Deployment of IaC templates"
     dependsOn: CI
     # condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
@@ -204,7 +204,7 @@ stages:
                 enabled: true
                 continueOnError: false
                 inputs:
-                  deploymentScope: "ResouceGroup"
+                  deploymentScope:  "Resource Group"
                   ConnectedServiceName: $(AZURE_RESOURCE_MANAGER_CONNECTION_NAME)
                   subscriptionId: $(AZURE_SUBSCRIPTION_ID) 
                   resourceGroupName: $(RESOURCE_GROUP_NAME)
@@ -221,6 +221,12 @@ stages:
                 displayName: 'Log armOutputs'
 
 
+
+  - stage: STG
+    displayName: "Deployment of IaC templates"
+    dependsOn: DEV
+    # condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+    jobs:
     - deployment: Deploy_STG
       displayName: "Deployment of IaC templates"
       continueOnError: false
@@ -268,7 +274,7 @@ stages:
                 enabled: true
                 continueOnError: false
                 inputs:
-                  deploymentScope: "ResouceGroup"
+                  deploymentScope: "Resource Group"
                   ConnectedServiceName: $(AZURE_RESOURCE_MANAGER_CONNECTION_NAME)
                   subscriptionId: $(AZURE_SUBSCRIPTION_ID) 
                   resourceGroupName: $(RESOURCE_GROUP_NAME)
@@ -283,4 +289,3 @@ stages:
               
               - script: echo $(armOutputs)
                 displayName: 'Log armOutputs'
-
