@@ -45,7 +45,7 @@
 
 2.  **https://github.com/ryoma-nagata/SynapseCICD-HOL.git** を入力して、**Import**をクリックします。
 
-![](.image/2022-02-15-13-55-22.png)
+![](.image/2022-05-23-17-43-14.png)
 
 3. リポジトリがインポートされていることを確認します。
 
@@ -106,7 +106,7 @@
 
 ### 3-2. テンプレートパラメータの編集
 
-1. [](infra/../../infra/params_dev.json)を開き、以下の項目を編集します。
+1. [params_dev.json](infra/../../infra/params_dev.json)を開き、以下の項目を編集します。
 
 
 | パラメータ               | 説明                                          |
@@ -122,7 +122,7 @@
 | sqlPoolBackupType   | SQLPoolのバックアップタイプ 。たとえばSTG環境ではGRSにします。                         |
 | sqlPooldwu          | SQLPoolの性能SKU。たとえばSTG環境では200DWUにします。                                   |
 
-2. [](infra/../../infra/params_stg.json)を開き、以下の項目を編集します。
+2. [params_stg.json](infra/../../infra/params_stg.json)を開き、以下の項目を編集します。
 
 | パラメータ               | 説明                                          |
 |---------------------|---------------------------------------------|
