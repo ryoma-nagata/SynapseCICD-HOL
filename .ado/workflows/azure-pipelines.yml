@@ -30,8 +30,10 @@ variables:
     value: "japaneast" # Update to '{yourLocationName}'
   - name: AZURE_SUBSCRIPTION_ID
     value: "" # サブスクリプションIDを入力してください
-  - name: RESOURCE_GROUP_NAME
-    value: "" # リソースグループ名を入力してください
+  - name: RESOURCE_GROUP_NAME_DEV
+    value: "" # DEVリソースグループ名を入力してください
+  - name: RESOURCE_GROUP_NAME_STG
+  value: "" # STGリソースグループ名を入力してください
 
 stages:
   - stage: CI
@@ -136,7 +138,7 @@ stages:
                   --subscription $(AZURE_SUBSCRIPTION_ID)
                 
                 az deployment group what-if `
-                  --resource-group $(RESOURCE_GROUP_NAME) `
+                  --resource-group $(RESOURCE_GROUP_NAME_STG) `
                   --subscription $(AZURE_SUBSCRIPTION_ID) `
                   --exclude-change-types Ignore NoChange Unsupported `
                   --template-file "$(System.DefaultWorkingDirectory)/infra/main.json" `
@@ -208,7 +210,7 @@ stages:
                   deploymentScope:  "Resource Group"
                   ConnectedServiceName: $(AZURE_RESOURCE_MANAGER_CONNECTION_NAME)
                   subscriptionId: $(AZURE_SUBSCRIPTION_ID) 
-                  resourceGroupName: $(RESOURCE_GROUP_NAME)
+                  resourceGroupName: $(RESOURCE_GROUP_NAME_DEV)
                   location: $(AZURE_LOCATION)
                   templateLocation: "Linked artifact"
                   csmFile: "$(Pipeline.Workspace)/infra/main.json"
@@ -278,7 +280,7 @@ stages:
                   deploymentScope: "Resource Group"
                   ConnectedServiceName: $(AZURE_RESOURCE_MANAGER_CONNECTION_NAME)
                   subscriptionId: $(AZURE_SUBSCRIPTION_ID) 
-                  resourceGroupName: $(RESOURCE_GROUP_NAME)
+                  resourceGroupName: $(RESOURCE_GROUP_NAME_STG)
                   location: $(AZURE_LOCATION)
                   templateLocation: "Linked artifact"
                   csmFile: "$(Pipeline.Workspace)/infra/main.json"

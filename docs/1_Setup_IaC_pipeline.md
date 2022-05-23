@@ -95,8 +95,9 @@
 
 1. [.ado/workflows/azure-pipelines.yml](.ado/workflows/azure-pipelines.yml)を開き、**edit**にて以下の変数を設定します。
 
-- AZURE_SUBSCRIPTION_ID
-- RESOURCE_GROUP_NAME
+- AZURE_SUBSCRIPTION_ID：サブスクリプションID
+- RESOURCE_GROUP_NAME_DEV：DEV環境用リソースグループの名称
+- RESOURCE_GROUP_NAME_STG：STG環境用リソースグループの名称（DEVと同一可能
 
 ![](.image/2022-02-15-14-06-41.png)
 
