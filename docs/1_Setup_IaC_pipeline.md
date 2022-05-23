@@ -20,6 +20,10 @@
 1. [基本グループを作成してメンバーを追加する](https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members) を参考に、以下のメンバーを追加します。
     1. 自分自身および、Synapse Workspace上での開発者
     2. 1-1で作成した、DevOps用のサービスプリンシパル 
+
+このセキュリティグループは、DataLakeや、KeyVaultの利用権限のほか、以下の権限が付与されます
+   - Synapse Workspaceへの成果物のデプロイのためのSynapse管理者権限
+   - SQL PoolデプロイのためのSQL AD管理者
     
 2. グループ名称とオブジェクトIDを確認し、メモします。この値は後ほど利用します。
 
@@ -32,6 +36,8 @@
 [Azure DevOpsにサインインする](https://docs.microsoft.com/ja-jp/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops)に従って、プロジェクトを作成します。
 
 ### 2-2. Repositryのインポート
+
+参考：[Git リポジトリをインポートする](https://docs.microsoft.com/ja-jp/azure/devops/repos/git/import-git-repository?view=azure-devops#import-into-a-new-repo)
 
 1. **Repos**->**Files**->**Import**の順にクリックします
 
@@ -167,3 +173,9 @@
 ### 4-1. Synapse RBACロールの付与
 
 1. [Synapse Studio で Synapse RBAC ロールの割り当てを管理する方法](https://docs.microsoft.com/ja-jp/azure/synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments#open-synapse-studio) を参考に、dev,stg環境それぞれで1-3で作成したセキュリティグループへのSynapse管理者権限の付与を実行します。
+
+
+
+## 次のステップ
+
+[Synapse SQL Poolおよびworkspace成果物のCICDパイプライン構成](2_Setup_SynapseCICD.md)

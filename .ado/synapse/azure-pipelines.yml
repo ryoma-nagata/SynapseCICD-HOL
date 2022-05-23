@@ -18,10 +18,6 @@ pr:
 variables:
   - name: AZURE_RESOURCE_MANAGER_CONNECTION_NAME
     value: "azure-devops-service-connection" # Update to '{yourResourceManagerConnectionName}'
-  - name: AZURE_LOCATION
-    value: "japaneast" # Update to '{yourLocationName}'
-  - name: AZURE_SUBSCRIPTION_ID
-    value: "" # Update to '{yourAZURE_SUBSCRIPTION_ID}'
   - name: SOURCE_WORKSPACE_NAME
     value: ""
   - name: TARGET_WORKSPACE_NAME_STG
