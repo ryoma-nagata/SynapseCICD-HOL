@@ -11,6 +11,14 @@ AzureDevOpsでSynapse AnalyticsのCICDを体験する簡単なハンズオンで
 - Visual Studio CommunityおよびSQL Server開発ツール(SSDT)
     - [インストール方法](https://docs.microsoft.com/ja-jp/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-ver15#ssdt-for-visual-studio-2019)
 
+## 作成されるリソース
+
+- Synapse Workspace
+  - 専用SQL Pool
+  - Spark Pool
+- Datalake Storage Gen2
+- Key Vault
+
 ### 注意
 
 SQL Poolの作成が発生します。
