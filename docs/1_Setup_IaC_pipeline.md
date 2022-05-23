@@ -174,8 +174,6 @@
 
 1. [Synapse Studio で Synapse RBAC ロールの割り当てを管理する方法](https://docs.microsoft.com/ja-jp/azure/synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments#open-synapse-studio) を参考に、dev,stg環境それぞれで1-3で作成したセキュリティグループへのSynapse管理者権限の付与を実行します。
 
-
-
 ## 次のステップ
 
 [Synapse SQL Poolおよびworkspace成果物のCICDパイプライン構成](2_Setup_SynapseCICD.md)
