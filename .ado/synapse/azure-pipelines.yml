@@ -10,7 +10,7 @@ trigger:
       - 'workspace_publish'
   paths:
     exclude:
-      - 'azure-pipelines-ci-main-cd-stg-synapse.yml'
+      - '.ado'
 pr:
   none
 
