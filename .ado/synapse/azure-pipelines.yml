@@ -44,7 +44,16 @@ stages:
             clean: true
             continueOnError: false
             enabled: true
-          - publish: '$(System.DefaultWorkingDirectory)'
+          - task: CopyFiles@2
+            name: copy_files
+            inputs:
+              Contents: |
+                **/TemplateForWorkspace.json 
+                **/TemplateParametersForWorkspace*.json 
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+              flattenFolders: true
+
+          - publish: '$(Build.ArtifactStagingDirectory)'
             displayName: 'Publish synapse'
             artifact: 'synapse'
 
@@ -91,8 +100,8 @@ stages:
                 
             - task: Synapse workspace deployment@2
               inputs:
-                TemplateFile: $(Pipeline.Workspace)/synapse/$(SOURCE_WORKSPACE_NAME)/TemplateForWorkspace.json
-                ParametersFile: $(Pipeline.Workspace)/synapse/$(SOURCE_WORKSPACE_NAME)/TemplateParametersForWorkspace_stg.json
+                TemplateFile: $(Pipeline.Workspace)/synapse/TemplateForWorkspace.json
+                ParametersFile: $(Pipeline.Workspace)/synapse/TemplateParametersForWorkspace_stg.json
                 azureSubscription: $(AZURE_RESOURCE_MANAGER_CONNECTION_NAME)
                 ResourceGroupName: $(TARGET_RESOURCE_GROUP_NAME_STG)
                 TargetWorkspaceName: $(TARGET_WORKSPACE_NAME_STG)
